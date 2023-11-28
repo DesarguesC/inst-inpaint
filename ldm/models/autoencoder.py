@@ -81,6 +81,7 @@ class VQModel(pl.LightningModule):
         sd = torch.load(path, map_location="cpu")["state_dict"]
         print(path)
         keys = list(sd.keys())
+        print(keys)
         for k in keys:
             for ik in ignore_keys:
                 if k.startswith(ik):
