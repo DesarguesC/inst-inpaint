@@ -79,9 +79,9 @@ class VQModel(pl.LightningModule):
 
     def init_from_ckpt(self, path, ignore_keys=list()):
         sd = torch.load(path, map_location="cpu")["state_dict"]
-        print(path)
+        # print(path)
         keys = list(sd.keys())
-        print(keys)
+        # print(keys)
         for k in keys:
             for ik in ignore_keys:
                 if k.startswith(ik):
